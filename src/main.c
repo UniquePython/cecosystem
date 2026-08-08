@@ -87,6 +87,8 @@ int main(void)
 
     while (!WindowShouldClose())
     {
+        WorldUpdate(&world, GetFrameTime());
+
         BeginDrawing();
         ClearBackground(BLACK);
         DrawOrganisms(&world);

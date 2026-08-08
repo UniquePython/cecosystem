@@ -21,5 +21,6 @@ bool WorldInit(World *world, size_t initialCapacity);
 void WorldFree(World *world);
 bool WorldAddOrganism(World *world, Organism organism);
 bool WorldRemoveOrganism(World *world, size_t index);
+void WorldUpdate(World *world, float dt);
 
 #endif

@@ -61,3 +61,36 @@ bool WorldRemoveOrganism(World *world, size_t index)
 
     return true;
 }
+
+void WorldUpdate(World *world, float dt)
+{
+    for (size_t idx = 0; idx < world->count; idx++)
+    {
+        Organism *organism = &world->organisms[idx];
+
+        organism->position.x += organism->velocity.x * dt;
+        organism->position.y += organism->velocity.y * dt;
+
+        if (organism->position.x < 0.0f)
+        {
+            organism->position.x = -organism->position.x;
+            organism->velocity.x = -organism->velocity.x;
+        }
+        else if (organism->position.x > WORLD_WIDTH)
+        {
+            organism->position.x = 2.0f * WORLD_WIDTH - organism->position.x;
+            organism->velocity.x = -organism->velocity.x;
+        }
+
+        if (organism->position.y < 0.0f)
+        {
+            organism->position.y = -organism->position.y;
+            organism->velocity.y = -organism->velocity.y;
+        }
+        else if (organism->position.y > WORLD_HEIGHT)
+        {
+            organism->position.y = 2.0f * WORLD_HEIGHT - organism->position.y;
+            organism->velocity.y = -organism->velocity.y;
+        }
+    }
+}
