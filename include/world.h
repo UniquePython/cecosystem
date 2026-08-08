@@ -6,6 +6,9 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+#define WORLD_WIDTH 600.0f
+#define WORLD_HEIGHT 400.0f
+
 typedef struct
 {
     Organism *organisms;

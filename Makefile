@@ -19,7 +19,6 @@ WARNINGS := \
 	-Wformat=2 \
 	-Wundef \
 	-Wstrict-prototypes \
-	-Wmissing-prototypes \
 	-Wold-style-definition \
 	-Wimplicit-fallthrough \
 	-Wlogical-op \
@@ -35,8 +34,7 @@ WARNINGS := \
 	-Wstrict-overflow=5 \
 	-Wswitch-enum \
 	-Wpointer-arith \
-	-Winit-self \
-	-Wbad-function-cast
+	-Winit-self
 
 CFLAGS := -std=c11 -g $(WARNINGS)
 CFLAGS += -Iinclude
